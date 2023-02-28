@@ -11,3 +11,18 @@ helm:
 image:
   repo: kong/httpbin
   tag: 0.1.0
+
+
+stg:
+  core:
+    environment: stg
+    application: core
+    customers: []
+    helm:
+      gitRepository: https://github.com/tmiller/helm-httpbin.git
+      gitRevision: main
+    image:
+      tag: latest
+      repo: kong/httpbin
+    customers:
+      - applebees
