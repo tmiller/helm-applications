@@ -63,8 +63,7 @@ prd:
       image:
         version: 0.1.0
         repo: kong/httpbin
-      customers:
-        - daxko
+      customers: []
     rest:
       environment: prd
       application: legacy
@@ -75,5 +74,6 @@ prd:
         version: 0.1.0
         repo: kong/httpbin
       customers:
+        - daxko
         - region
         - alabama-power
