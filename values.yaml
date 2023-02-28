@@ -38,7 +38,8 @@ prd:
       image:
         version: 0.1.0
         repo: kong/httpbin
-      customers: []
+      customers:
+        - apple
     rest:
       environment: prd
       application: core
@@ -49,7 +50,6 @@ prd:
         version: 0.1.0
         repo: kong/httpbin
       customers:
-        - apple
         - google
         - microsoft
 
@@ -63,7 +63,8 @@ prd:
       image:
         version: 0.1.0
         repo: kong/httpbin
-      customers: []
+      customers:
+        - daxko
     rest:
       environment: prd
       application: legacy
@@ -74,6 +75,5 @@ prd:
         version: 0.1.0
         repo: kong/httpbin
       customers:
-        - daxko
         - region
         - alabama-power
