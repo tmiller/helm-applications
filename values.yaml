@@ -26,7 +26,6 @@ stg:
     customers:
       - applebees
 
-stg:
   legacy:
     environment: stg
     application: legacy
