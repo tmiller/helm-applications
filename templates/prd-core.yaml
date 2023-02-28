@@ -1,0 +1,33 @@
+{{- range $index, $customer := .Values.stg.core.customers }}
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: {{ $.Values.stg.core.environment }}-{{ $.Values.stg.core.application }}-{{ $customer }}
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+  labels:
+    version: {{ $.Values.stg.core.application }}-{{ $.Values.stg.core.image.version }}
+  annotations:
+    rgocd.argoproj.io/sync-wave: "{{ mod $index 2 }}"
+spec:
+  project: default
+  source:
+    repoURL: {{ $.Values.stg.core.helm.gitRepository }}
+    targetRevision: {{ $.Values.stg.core.helm.gitRevision }}
+    path: .
+    helm:
+      values: >-
+        {{ $.Values.stg.core | toJson }}
+  destination:
+    namespace: {{ $.Values.stg.core.environment }}-{{ $customer }}
+    server: https://kubernetes.default.svc
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true   
+    syncOptions:
+      - RespectIgnoreDifferences=true
+      - CreateNamespace=true
+{{- end }}
