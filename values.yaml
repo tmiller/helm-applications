@@ -1,0 +1,13 @@
+# Default values for deploys.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+environment: stg
+application: core
+customers: []
+helm:
+  gitRepository: https://github.com/tmiller/helm-httpbin.git
+  gitRevision: main
+image:
+  repo: kong/httpbin
+  tag: 0.1.0

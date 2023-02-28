@@ -1,0 +1,31 @@
+{{- range $index, $customer := .Values.customers }}
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: {{ $.Values.environment }}-{{ $.Values.application }}-{{ $customer }}
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+  annotations:
+    rgocd.argoproj.io/sync-wave: "{{ mod $index 2 }}"
+spec:
+  project: default
+  source:
+    repoURL: {{ $.Values.helm.gitRepository }}
+    targetRevision: {{ $.Values.helm.gitRevision }}
+    path: .
+    helm:
+      values: >-
+        {{ $.Values | toJson }}
+  destination:
+    namespace: {{ $.Values.environment }}-{{ $customer }}
+    server: https://kubernetes.default.svc
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true   
+    syncOptions:
+      - RespectIgnoreDifferences=true
+      - CreateNamespace=true
+{{- end }}
