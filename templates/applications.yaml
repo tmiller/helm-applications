@@ -11,7 +11,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/tmiller/helm-applications
-    targetRevision: {{ .Values.customerVersion }}
+    targetRevision: main
     path: .
   destination:
     namespace: argocd

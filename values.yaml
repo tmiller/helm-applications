@@ -12,7 +12,7 @@ stg:
       gitRepository: https://github.com/tmiller/helm-httpbin.git
       gitRevision: main
     image:
-      tag: latest
+      version: latest
       repo: kong/httpbin
     customers:
       - applebees
@@ -24,7 +24,7 @@ stg:
       gitRepository: https://github.com/tmiller/helm-httpbin.git
       gitRevision: main
     image:
-      tag: latest
+      version: latest
       repo: kong/httpbin
     customers:
       - longjohns
