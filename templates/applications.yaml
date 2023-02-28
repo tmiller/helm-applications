@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: reclique-deployments
+  name: 0-applications
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
