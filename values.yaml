@@ -36,7 +36,7 @@ prd:
         gitRepository: https://github.com/tmiller/helm-httpbin.git
         gitRevision: main
       image:
-        version: latest
+        version: 0.1.0
         repo: kong/httpbin
       customers:
         - apple
