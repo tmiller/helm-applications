@@ -26,3 +26,17 @@ stg:
       repo: kong/httpbin
     customers:
       - applebees
+
+stg:
+  legacy:
+    environment: stg
+    application: legacy
+    customers: []
+    helm:
+      gitRepository: https://github.com/tmiller/helm-httpbin.git
+      gitRevision: main
+    image:
+      tag: latest
+      repo: kong/httpbin
+    customers:
+      - longjohns
