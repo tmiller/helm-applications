@@ -65,6 +65,7 @@ prd:
         repo: kong/httpbin
       customers:
         - daxko
+        - region
 
     rest:
       environment: prd
@@ -76,5 +77,4 @@ prd:
         version: 0.1.0
         repo: kong/httpbin
       customers:
-        - region
         - alabama-power
