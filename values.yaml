@@ -26,3 +26,32 @@ stg:
       repo: kong/httpbin
     customers:
       - longjohns
+
+prd:
+  core:
+    environment: prd
+    application: core
+    helm:
+      gitRepository: https://github.com/tmiller/helm-httpbin.git
+      gitRevision: main
+    image:
+      version: 0.1.0
+      repo: kong/httpbin
+    customers:
+      - apple
+      - google
+      - microsoft
+
+  legacy:
+    environment: prd
+    application: legacy
+    helm:
+      gitRepository: https://github.com/tmiller/helm-httpbin.git
+      gitRevision: main
+    image:
+      version: 0.1.0
+      repo: kong/httpbin
+    customers:
+      - daxko
+      - region
+      - alabama-power
