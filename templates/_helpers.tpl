@@ -9,7 +9,7 @@ metadata:
   finalizers:
     - resources-finalizer.argocd.argoproj.io
   annotations:
-    argocd.argoproj.io/sync-wave: "{{ mod $index 2 }}"
+    argocd.argoproj.io/sync-wave: "{{ mod $index 4 }}"
 spec:
   project: default
   source:
