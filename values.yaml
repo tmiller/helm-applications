@@ -2,8 +2,6 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-customerVersion: 1.0.0
-
 stg:
   core:
     environment: stg
