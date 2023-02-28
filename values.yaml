@@ -29,29 +29,51 @@ stg:
 
 prd:
   core:
-    environment: prd
-    application: core
-    helm:
-      gitRepository: https://github.com/tmiller/helm-httpbin.git
-      gitRevision: main
-    image:
-      version: 0.1.0
-      repo: kong/httpbin
-    customers:
-      - apple
-      - google
-      - microsoft
+    alpha:
+      environment: prd
+      application: core
+      helm:
+        gitRepository: https://github.com/tmiller/helm-httpbin.git
+        gitRevision: main
+      image:
+        version: 0.1.0
+        repo: kong/httpbin
+      customers: []
+    rest:
+      environment: prd
+      application: core
+      helm:
+        gitRepository: https://github.com/tmiller/helm-httpbin.git
+        gitRevision: main
+      image:
+        version: 0.1.0
+        repo: kong/httpbin
+      customers:
+        - apple
+        - google
+        - microsoft
 
   legacy:
-    environment: prd
-    application: legacy
-    helm:
-      gitRepository: https://github.com/tmiller/helm-httpbin.git
-      gitRevision: main
-    image:
-      version: 0.1.0
-      repo: kong/httpbin
-    customers:
-      - daxko
-      - region
-      - alabama-power
+    alpha:
+      environment: prd
+      application: legacy
+      helm:
+        gitRepository: https://github.com/tmiller/helm-httpbin.git
+        gitRevision: main
+      image:
+        version: 0.1.0
+        repo: kong/httpbin
+      customers: []
+    rest:
+      environment: prd
+      application: legacy
+      helm:
+        gitRepository: https://github.com/tmiller/helm-httpbin.git
+        gitRevision: main
+      image:
+        version: 0.1.0
+        repo: kong/httpbin
+      customers:
+        - daxko
+        - region
+        - alabama-power
