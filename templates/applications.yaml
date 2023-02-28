@@ -16,6 +16,14 @@ spec:
   destination:
     namespace: argocd
     server: https://kubernetes.default.svc
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - RespectIgnoreDifferences=true
+      - CreateNamespace=true
+
 {{ include "application" .Values.prd.core.alpha }}
 {{ include "application" .Values.prd.core.rest }}
 {{ include "application" .Values.prd.legacy.alpha }}
