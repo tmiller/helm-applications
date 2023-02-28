@@ -17,7 +17,6 @@ stg:
   core:
     environment: stg
     application: core
-    customers: []
     helm:
       gitRepository: https://github.com/tmiller/helm-httpbin.git
       gitRevision: main
@@ -31,7 +30,6 @@ stg:
   legacy:
     environment: stg
     application: legacy
-    customers: []
     helm:
       gitRepository: https://github.com/tmiller/helm-httpbin.git
       gitRevision: main

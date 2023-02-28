@@ -1,9 +1,9 @@
-{{- range $index, $customer := .Values.stg.core.customers }}
+{{- range $index, $customer := .Values.stg.legacy.customers }}
 ---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: {{ $.Values.stg.core.environment }}-{{ $.Values.stg.core.application }}-{{ $customer }}
+  name: {{ $.Values.stg.legacy.environment }}-{{ $.Values.stg.legacy.application }}-{{ $customer }}
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
@@ -12,14 +12,14 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: {{ $.Values.stg.core.helm.gitRepository }}
-    targetRevision: {{ $.Values.stg.core.helm.gitRevision }}
+    repoURL: {{ $.Values.stg.legacy.helm.gitRepository }}
+    targetRevision: {{ $.Values.stg.legacy.helm.gitRevision }}
     path: .
     helm:
       values: >-
-        {{ $.Values.stg.core | toJson }}
+        {{ $.Values.stg.legacy | toJson }}
   destination:
-    namespace: {{ $.Values.stg.core.environment }}-{{ $customer }}
+    namespace: {{ $.Values.stg.legacy.environment }}-{{ $customer }}
     server: https://kubernetes.default.svc
   syncPolicy:
     automated:
