@@ -1,25 +1,20 @@
-{{- range $index, $customer := .Values.customers }}
----
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: {{ $.Values.environment }}-{{ $.Values.application }}-{{ $customer }}
+  name: reclique-deployments
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
   annotations:
-    rgocd.argoproj.io/sync-wave: "{{ mod $index 2 }}"
+    rgocd.argoproj.io/sync-wave: "-50"
 spec:
   project: default
   source:
-    repoURL: {{ $.Values.helm.gitRepository }}
-    targetRevision: {{ $.Values.helm.gitRevision }}
+    repoURL: https://github.com/tmiller/helm-applications
+    targetRevision: {{ .Values.customerVersion }}
     path: .
-    helm:
-      values: >-
-        {{ $.Values | toJson }}
   destination:
-    namespace: {{ $.Values.environment }}-{{ $customer }}
+    namespace: argocd
     server: https://kubernetes.default.svc
   syncPolicy:
     automated:
@@ -28,4 +23,3 @@ spec:
     syncOptions:
       - RespectIgnoreDifferences=true
       - CreateNamespace=true
-{{- end }}
