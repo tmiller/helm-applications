@@ -7,8 +7,8 @@ metadata:
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
-  annotations:
-    rgocd.argoproj.io/sync-wave: "{{ mod $index 2 }}"
+      #   annotations:
+      #     rgocd.argoproj.io/sync-wave: "{{ mod $index 2 }}"
 spec:
   project: default
   source:
@@ -16,8 +16,12 @@ spec:
     targetRevision: {{ $.Values.prd.legacy.alpha.helm.gitRevision }}
     path: .
     helm:
-      values: >-
-        {{ $.Values.prd.legacy.alpha | toJson }}
+      values: |-
+        environment: {{ $.Values.prd.legacy.alpha.image.enviornment }}
+        application: {{ $.Values.prd.legacy.alpha.image.application }}
+        image:
+          version: {{ $.Values.prd.legacy.alpha.image.version }}
+          repo: {{ $.Values.prd.legacy.alpha.image.repo }}
   destination:
     namespace: {{ $.Values.prd.legacy.alpha.environment }}-{{ $customer }}
     server: https://kubernetes.default.svc
