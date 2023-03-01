@@ -9,7 +9,7 @@ metadata:
   finalizers:
     - resources-finalizer.argocd.argoproj.io
   labels:
-    tag: {{ $.image.version | quote }}
+    ver: {{ $.image.version | quote }}
     app: {{ $.application | quote }}
   annotations:
     argocd.argoproj.io/sync-wave: "{{ mod $index 4 }}"
