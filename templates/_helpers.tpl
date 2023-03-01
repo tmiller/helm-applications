@@ -25,7 +25,7 @@ spec:
         environment: {{ $.environment }}
         application: {{ $.application }}
         domains:
-          - {{ $.application }}.{{ $.rootDomain }}
+          - {{ $customer.name }}.{{ $.rootDomain }}
         image:
           version: {{ $.image.version }}
           repo: {{ $.image.repo }}
