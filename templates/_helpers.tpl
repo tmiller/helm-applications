@@ -11,7 +11,7 @@ metadata:
   labels:
     ver: {{ $.image.version | quote }}
     app: {{ $.application | quote }}
-    env: {{ $.environment | qutoe }}
+    env: {{ $.environment | quote }}
   annotations:
     argocd.argoproj.io/sync-wave: "{{ mod $index 4 }}"
 spec:
