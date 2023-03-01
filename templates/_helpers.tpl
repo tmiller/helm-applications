@@ -24,7 +24,8 @@ spec:
       values: |-
         environment: {{ $.environment }}
         application: {{ $.application }}
-        domains: {{ $customer.domains | toJson}}
+        domains:
+          - {{ $.application }}.{{ $.rootDomain }}
         image:
           version: {{ $.image.version }}
           repo: {{ $.image.repo }}
