@@ -86,7 +86,7 @@ prd_legacy_alpha:
       domains: ["www.daxko.com"]
 
     - name: regions
-      php: '7.0'
+      php: '7.4'
       domains: ["resgions.daxko.com"]
 
 
