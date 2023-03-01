@@ -12,8 +12,14 @@ stg:
     image:
       version: latest
       repo: kong/httpbin
+
     customers:
-      - applebees
+      - name: applebees
+        php: 8.0
+        domains: ["applebees.stg.daxko.com"]
+
+
+
 
   legacy:
     environment: stg
@@ -24,8 +30,14 @@ stg:
     image:
       version: latest
       repo: kong/httpbin
+
     customers:
-      - longjohns
+      - name: longjohns
+        php: 7.4
+        domains: ["longjonns.stg.daxko.com"]
+
+
+
 
 prd:
   core:
@@ -38,8 +50,14 @@ prd:
       image:
         version: 0.1.0
         repo: kong/httpbin
+
       customers:
-        - apple
+        - name: apple
+          php: 8.0
+          domains: ["www.example.com", "apple.daxko.com"]
+
+
+
 
     rest:
       environment: prd
@@ -51,8 +69,16 @@ prd:
         version: 0.1.0
         repo: kong/httpbin
       customers:
-        - google
-        - microsoft
+        - name: google
+          php: 7.4
+          domains: ["google.daxko.com"]
+
+        - name: microsoft
+          php: 8.0
+          domains: ["microsoft.daxko.com"]
+
+
+
 
   legacy:
     alpha:
@@ -64,9 +90,18 @@ prd:
       image:
         version: 0.1.0
         repo: kong/httpbin
+
       customers:
-        - daxko
-        - region
+        - name: daxko
+          php: 8.0
+          domains: ["www.daxko.com"]
+
+        - name: regions
+          php: 7.0
+          domains: ["resgions.daxko.com"]
+
+
+
 
     rest:
       environment: prd
@@ -77,5 +112,8 @@ prd:
       image:
         version: 0.1.0
         repo: kong/httpbin
+
       customers:
-        - alabama-power
+        - name: alabama-power
+          php: 8.0
+          domains: ["southernco.daxko.com"]

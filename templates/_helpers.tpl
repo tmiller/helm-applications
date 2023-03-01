@@ -4,14 +4,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: {{ $.environment }}-{{ $.application }}-{{ $customer }}
+  name: {{ $.environment }}-{{ $.application }}-{{ $customer.name }}
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
   labels:
-    version: {{ $.image.version }}
-    app: {{ $.application }}
-    php: '7.4'
+    tag: {{ $.image.version | toString }}
+    app: {{ $.application | toString }}
+    php: {{ $customer.php | toString }}
   annotations:
     argocd.argoproj.io/sync-wave: "{{ mod $index 4 }}"
 spec:
@@ -24,11 +24,12 @@ spec:
       values: |-
         environment: {{ $.environment }}
         application: {{ $.application }}
+        domains: {{ $customer.domains }}
         image:
           version: {{ $.image.version }}
           repo: {{ $.image.repo }}
   destination:
-    namespace: {{ $.environment }}-{{ $customer }}
+    namespace: {{ $.environment }}-{{ $customer.name }}
     server: https://kubernetes.default.svc
   syncPolicy:
     automated:
