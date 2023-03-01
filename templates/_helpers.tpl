@@ -11,6 +11,7 @@ metadata:
   labels:
     version: {{ $.image.version }}
     app: {{ $.application }}
+    php: 7.4
   annotations:
     argocd.argoproj.io/sync-wave: "{{ mod $index 4 }}"
 spec:
