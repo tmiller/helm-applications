@@ -2,118 +2,105 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-stg:
-  core:
-    environment: stg
-    application: core
-    helm:
-      gitRepository: https://github.com/tmiller/helm-httpbin.git
-      gitRevision: main
-    image:
-      version: latest
-      repo: kong/httpbin
+stg-core:
+  environment: stg
+  application: core
+  helm:
+    gitRepository: https://github.com/tmiller/helm-httpbin.git
+    gitRevision: main
+  image:
+    version: latest
+    repo: kong/httpbin
 
-    customers:
-      - name: applebees
-        php: 8.0
-        domains: ["applebees.stg.daxko.com"]
-
+  customers:
+    - name: applebees
+      php: '8.0'
+      domains: ["applebees.stg.daxko.com"]
 
 
+stg-legacy:
+  environment: stg
+  application: legacy
+  helm:
+    gitRepository: https://github.com/tmiller/helm-httpbin.git
+    gitRevision: main
+  image:
+    version: latest
+    repo: kong/httpbin
 
-  legacy:
-    environment: stg
-    application: legacy
-    helm:
-      gitRepository: https://github.com/tmiller/helm-httpbin.git
-      gitRevision: main
-    image:
-      version: latest
-      repo: kong/httpbin
-
-    customers:
-      - name: longjohns
-        php: 7.4
-        domains: ["longjonns.stg.daxko.com"]
-
+  customers:
+    - name: longjohns
+      php: '7.4'
+      domains: ["longjonns.stg.daxko.com"]
 
 
+prd-core-alpha:
+  environment: prd
+  application: core
+  helm:
+    gitRepository: https://github.com/tmiller/helm-httpbin.git
+    gitRevision: main
+  image:
+    version: '0.1.0'
+    repo: kong/httpbin
 
-prd:
-  core:
-    alpha:
-      environment: prd
-      application: core
-      helm:
-        gitRepository: https://github.com/tmiller/helm-httpbin.git
-        gitRevision: main
-      image:
-        version: 0.1.0
-        repo: kong/httpbin
-
-      customers:
-        - name: apple
-          php: 8.0
-          domains: ["www.example.com", "apple.daxko.com"]
+  customers:
+    - name: apple
+      php: '8.0'
+      domains: ["www.example.com", "apple.daxko.com"]
 
 
+prd-core-rest:
+  environment: prd
+  application: core
+  helm:
+    gitRepository: https://github.com/tmiller/helm-httpbin.git
+    gitRevision: main
+  image:
+    version: '0.1.0'
+    repo: kong/httpbin
+
+  customers:
+    - name: google
+      php: '7.4'
+      domains: ["google.daxko.com"]
+
+    - name: microsoft
+      php: '8.0'
+      domains: ["microsoft.daxko.com"]
 
 
-    rest:
-      environment: prd
-      application: core
-      helm:
-        gitRepository: https://github.com/tmiller/helm-httpbin.git
-        gitRevision: main
-      image:
-        version: 0.1.0
-        repo: kong/httpbin
-      customers:
-        - name: google
-          php: 7.4
-          domains: ["google.daxko.com"]
+prd-legacy-alpha:
+  environment: prd
+  application: legacy
+  helm:
+    gitRepository: https://github.com/tmiller/helm-httpbin.git
+    gitRevision: main
+  image:
+    version: '0.1.0'
+    repo: kong/httpbin
 
-        - name: microsoft
-          php: 8.0
-          domains: ["microsoft.daxko.com"]
+  customers:
+    - name: daxko
+      php: '8.0'
+      domains: ["www.daxko.com"]
 
-
-
-
-  legacy:
-    alpha:
-      environment: prd
-      application: legacy
-      helm:
-        gitRepository: https://github.com/tmiller/helm-httpbin.git
-        gitRevision: main
-      image:
-        version: 0.1.0
-        repo: kong/httpbin
-
-      customers:
-        - name: daxko
-          php: 8.0
-          domains: ["www.daxko.com"]
-
-        - name: regions
-          php: 7.0
-          domains: ["resgions.daxko.com"]
+    - name: regions
+      php: '7.0'
+      domains: ["resgions.daxko.com"]
 
 
+prd-legacy-rest:
+  environment: prd
+  application: legacy
+  helm:
+    gitRepository: https://github.com/tmiller/helm-httpbin.git
+    gitRevision: main
+  image:
+    version: '0.1.0'
+    repo: kong/httpbin
 
-
-    rest:
-      environment: prd
-      application: legacy
-      helm:
-        gitRepository: https://github.com/tmiller/helm-httpbin.git
-        gitRevision: main
-      image:
-        version: 0.1.0
-        repo: kong/httpbin
-
-      customers:
-        - name: alabama-power
-          php: 8.0
-          domains: ["southernco.daxko.com"]
+  customers:
+    - name: alabama-power
+      php: '8.0'
+      domains: ["southernco.daxko.com"]
