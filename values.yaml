@@ -14,7 +14,6 @@ stg_deploy_two:
 
   customers:
     - name: applebees
-      php: '8.0'
       domains: ["applebees.stg.daxko.com"]
 
 
@@ -30,7 +29,6 @@ stg_deploy_one:
 
   customers:
     - name: longjohns
-      php: '7.4'
       domains: ["longjonns.stg.daxko.com"]
 
 
@@ -46,7 +44,6 @@ prd_deploy_two_alpha:
 
   customers:
     - name: apple
-      php: '8.0'
       domains: ["www.example.com", "apple.daxko.com"]
 
 
@@ -62,11 +59,9 @@ prd_deploy_two_rest:
 
   customers:
     - name: google
-      php: '7.4'
       domains: ["google.daxko.com"]
 
     - name: microsoft
-      php: '8.0'
       domains: ["microsoft.daxko.com"]
 
 
@@ -82,11 +77,9 @@ prd_deploy_one_alpha:
 
   customers:
     - name: daxko
-      php: '8.0'
       domains: ["www.daxko.com"]
 
     - name: regions
-      php: '7.4'
       domains: ["resgions.daxko.com"]
 
 
@@ -102,5 +95,4 @@ prd_deploy_one_rest:
 
   customers:
     - name: alabama-power
-      php: '8.0'
       domains: ["southernco.daxko.com"]
