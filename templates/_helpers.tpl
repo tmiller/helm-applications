@@ -9,8 +9,8 @@ metadata:
   finalizers:
     - resources-finalizer.argocd.argoproj.io
   labels:
-    app: {{ $.applications }}
-    image: {{ $.image.version }}
+    version: {{ $.image.version }}
+    app: {{ $.application }}
   annotations:
     argocd.argoproj.io/sync-wave: "{{ mod $index 4 }}"
 spec:
