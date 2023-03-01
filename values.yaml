@@ -2,7 +2,7 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-stg-core:
+stg_core:
   environment: stg
   application: core
   helm:
@@ -18,7 +18,7 @@ stg-core:
       domains: ["applebees.stg.daxko.com"]
 
 
-stg-legacy:
+stg_legacy:
   environment: stg
   application: legacy
   helm:
@@ -34,7 +34,7 @@ stg-legacy:
       domains: ["longjonns.stg.daxko.com"]
 
 
-prd-core-alpha:
+prd_core_alpha:
   environment: prd
   application: core
   helm:
@@ -50,7 +50,7 @@ prd-core-alpha:
       domains: ["www.example.com", "apple.daxko.com"]
 
 
-prd-core-rest:
+prd_core_rest:
   environment: prd
   application: core
   helm:
@@ -70,7 +70,7 @@ prd-core-rest:
       domains: ["microsoft.daxko.com"]
 
 
-prd-legacy-alpha:
+prd_legacy_alpha:
   environment: prd
   application: legacy
   helm:
@@ -90,7 +90,7 @@ prd-legacy-alpha:
       domains: ["resgions.daxko.com"]
 
 
-prd-legacy-rest:
+prd_legacy_rest:
   environment: prd
   application: legacy
   helm:
