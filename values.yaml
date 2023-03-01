@@ -2,9 +2,9 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-stg_core:
+stg_deploy_two:
   environment: stg
-  application: core
+  application: deploy-two
   helm:
     gitRepository: https://github.com/tmiller/helm-httpbin.git
     gitRevision: main
@@ -18,9 +18,9 @@ stg_core:
       domains: ["applebees.stg.daxko.com"]
 
 
-stg_legacy:
+stg_deploy_one:
   environment: stg
-  application: legacy
+  application: deploy-one
   helm:
     gitRepository: https://github.com/tmiller/helm-httpbin.git
     gitRevision: main
@@ -34,9 +34,9 @@ stg_legacy:
       domains: ["longjonns.stg.daxko.com"]
 
 
-prd_core_alpha:
+prd_deploy_two_alpha:
   environment: prd
-  application: core
+  application: deploy-two
   helm:
     gitRepository: https://github.com/tmiller/helm-httpbin.git
     gitRevision: main
@@ -50,9 +50,9 @@ prd_core_alpha:
       domains: ["www.example.com", "apple.daxko.com"]
 
 
-prd_core_rest:
+prd_deploy_two_rest:
   environment: prd
-  application: core
+  application: deploy-two
   helm:
     gitRepository: https://github.com/tmiller/helm-httpbin.git
     gitRevision: main
@@ -70,9 +70,9 @@ prd_core_rest:
       domains: ["microsoft.daxko.com"]
 
 
-prd_legacy_alpha:
+prd_deploy_one_alpha:
   environment: prd
-  application: legacy
+  application: deploy-one
   helm:
     gitRepository: https://github.com/tmiller/helm-httpbin.git
     gitRevision: main
@@ -90,9 +90,9 @@ prd_legacy_alpha:
       domains: ["resgions.daxko.com"]
 
 
-prd_legacy_rest:
+prd_deploy_one_rest:
   environment: prd
-  application: legacy
+  application: deploy-one
   helm:
     gitRepository: https://github.com/tmiller/helm-httpbin.git
     gitRevision: main

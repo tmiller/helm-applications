@@ -24,9 +24,11 @@ spec:
       - RespectIgnoreDifferences=true
       - CreateNamespace=true
 
-{{ include "application" .Values.prd_core_alpha }}
-{{ include "application" .Values.prd_core_rest }}
-{{ include "application" .Values.prd_legacy_alpha }}
-{{ include "application" .Values.prd_legacy_rest }}
-{{ include "application" .Values.stg_core }}
-{{ include "application" .Values.stg_legacy }}
+{{ include "application" .Values.prd_deploy_two_alpha }}
+{{ include "application" .Values.prd_deploy_two_rest }}
+
+{{ include "application" .Values.prd_deploy_one_alpha }}
+{{ include "application" .Values.prd_deploy_one_rest }}
+
+{{ include "application" .Values.stg_deploy_two }}
+{{ include "application" .Values.stg_deploy_one }}
