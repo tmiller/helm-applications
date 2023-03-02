@@ -26,6 +26,11 @@ spec:
         application: {{ $.application }}
         domains:
           - {{ $customer.name }}.{{ $.rootDomain }}
+        {{- if hasKey $. "vanityDomains" }}
+        {{- range $.vanityDomains }}
+          - {{ . }}
+        {{- end }}
+        {{- end }}
         image:
           version: {{ $.image.version }}
           repo: {{ $.image.repo }}
