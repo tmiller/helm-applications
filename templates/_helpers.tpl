@@ -27,7 +27,7 @@ spec:
         domains:
           - {{ $customer.name }}.{{ $.rootDomain }}
         {{- if hasKey $customer "vanityDomains" }}
-        {{- range $.vanityDomains }}
+        {{- range $customer.vanityDomains }}
           - {{ . }}
         {{- end }}
         {{- end }}
