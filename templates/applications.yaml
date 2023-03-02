@@ -25,10 +25,10 @@ spec:
       - CreateNamespace=true
 
 {{ include "application" (mergeOverwrite .Values.shared .Values.prd_deploy_two_alpha) }}
-{{ include "application" (mergeOverwrite .Values.shared .Values.prd_deploy_two_rest) }}
+{{ include "application" (mergeOverwrite .Values.shared .Values.prd_deploy_two) }}
 
 {{ include "application" (mergeOverwrite .Values.shared .Values.prd_deploy_one_alpha) }}
-{{ include "application" (mergeOverwrite .Values.shared .Values.prd_deploy_one_rest) }}
+{{ include "application" (mergeOverwrite .Values.shared .Values.prd_deploy_one) }}
 
 {{ include "application" (mergeOverwrite .Values.shared .Values.stg_deploy_two) }}
 {{ include "application" (mergeOverwrite .Values.shared .Values.stg_deploy_one) }}

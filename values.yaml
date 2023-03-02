@@ -25,7 +25,7 @@ prd_deploy_two_alpha:
     - name: cookies
 
 
-prd_deploy_two_rest:
+prd_deploy_two:
   environment: prd
   application: deploy-two
   image:
@@ -46,7 +46,7 @@ prd_deploy_one_alpha:
     - name: apple
 
 
-prd_deploy_one_rest:
+prd_deploy_one:
   environment: prd
   application: deploy-one
   image:
