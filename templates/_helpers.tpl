@@ -35,7 +35,7 @@ spec:
         {{- end }}
         image:
           version: {{ $.image.version }}
-          repo: {{ $.image.repo }}/{{ $.application }}
+          repo: {{ $.image.repo }}
   destination:
     namespace: {{ $.environment }}-{{ $customer.name }}
     server: https://kubernetes.default.svc
