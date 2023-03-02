@@ -25,7 +25,9 @@ spec:
         environment: {{ $.environment }}
         application: {{ $.application }}
         domains:
-          - {{ $customer.name }}.{{ $.rootDomain }}
+        {{- range $.defaultDomains }}
+          - {{ $customer.name }}.{{ . }}
+        {{- end }}
         {{- if hasKey $customer "vanityDomains" }}
         {{- range $customer.vanityDomains }}
           - {{ . }}

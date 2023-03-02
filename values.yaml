@@ -2,87 +2,76 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-
-stg_deploy_two:
-  environment: stg
-  application: deploy-two
-  rootDomain: reclique-rancher.daxko.tech
+shared:
+  defaultDomains: 
+    - reclique-rancher.daxko.tech
+    - recliquecore.com
   helm:
     gitRepository: https://github.com/tmiller/helm-httpbin.git
     gitRevision: main
-  image:
-    version: latest
-    repo: kong/httpbin
-
-  customers:
-    - name: ccptest
-      vanityDomains:
-        - ccptest.recliquecore.com
-        - ccptest.tmiller.dev
-
-stg_deploy_one:
-  environment: stg
-  application: deploy-one
-  rootDomain: reclique-rancher.daxko.tech
-  helm:
-    gitRepository: https://github.com/tmiller/helm-httpbin.git
-    gitRevision: main
-  image:
-    version: latest
-    repo: kong/httpbin
-
-  customers: []
 
 
 prd_deploy_two_alpha:
   environment: prd
   application: deploy-two
-  rootDomain: reclique-rancher.daxko.tech
-  helm:
-    gitRepository: https://github.com/tmiller/helm-httpbin.git
-    gitRevision: main
   image:
     version: '0.1.0'
     repo: kong/httpbin
 
-  customers: []
+  customers:
+    - name: ccptest
+      vanityDomains:
+        - ccptest.tmiller.dev
+    - name: apple
 
 
 prd_deploy_two_rest:
   environment: prd
   application: deploy-two
-  rootDomain: reclique-rancher.daxko.tech
-  helm:
-    gitRepository: https://github.com/tmiller/helm-httpbin.git
-    gitRevision: main
   image:
     version: '0.1.0'
     repo: kong/httpbin
 
-  customers: []
+  customers:
+    - name: google
 
 
 prd_deploy_one_alpha:
   environment: prd
   application: deploy-one
-  rootDomain: reclique-rancher.daxko.tech
-  helm:
-    gitRepository: https://github.com/tmiller/helm-httpbin.git
-    gitRevision: main
   image:
     version: '0.1.0'
     repo: kong/httpbin
-  customers: []
+  customers:
+    - name: apple
 
 
 prd_deploy_one_rest:
   environment: prd
   application: deploy-one
-  rootDomain: reclique-rancher.daxko.tech
-  helm:
-    gitRepository: https://github.com/tmiller/helm-httpbin.git
-    gitRevision: main
   image:
     version: '0.1.0'
     repo: kong/httpbin
-  customers: []
+  customers:
+    - name: android
+
+
+stg_deploy_two:
+  environment: stg
+  application: deploy-two
+  image:
+    version: latest
+    repo: kong/httpbin
+  customers:
+    - name: target
+
+
+stg_deploy_one:
+  environment: stg
+  application: deploy-one
+  image:
+    version: latest
+    repo: kong/httpbin
+
+  customers:
+    - name: aldi
