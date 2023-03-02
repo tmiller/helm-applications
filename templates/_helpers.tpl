@@ -13,7 +13,7 @@ metadata:
     app: {{ $.application | quote }}
     env: {{ $.environment | quote }}
   annotations:
-    argocd.argoproj.io/sync-wave: "{{ mod $index 4 }}"
+    argocd.argoproj.io/sync-wave: "{{ mod $index 10 }}"
 spec:
   project: default
   source:
