@@ -3,12 +3,10 @@ kind: Application
 metadata:
   name: 0-apps
   namespace: argocd
-    # finalizers:
-    #   - resources-finalizer.argocd.argoproj.io
   annotations:
     argocd.argoproj.io/sync-wave: "-50"
 spec:
-  project: default
+  project: system
   source:
     repoURL: https://github.com/tmiller/helm-applications
     targetRevision: main
