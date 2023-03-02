@@ -18,7 +18,7 @@ stg_deploy_two:
     - name: ccptest
       vanityDomains:
         - ccptest.recliquecore.com
-
+        - ccptest.tmiller.dev
 
 stg_deploy_one:
   environment: stg
