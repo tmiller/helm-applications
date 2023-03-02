@@ -16,6 +16,8 @@ stg_deploy_two:
 
   customers:
     - name: ccptest
+      vanityDomains:
+        - ccptest.recliquecore.com
 
 
 stg_deploy_one:
