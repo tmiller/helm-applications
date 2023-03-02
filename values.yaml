@@ -22,7 +22,7 @@ prd_deploy_two_alpha:
     - name: ccptest
       vanityDomains:
         - ccptest.tmiller.dev
-    - name: apple
+    - name: cookies
 
 
 prd_deploy_two_rest:
