@@ -24,6 +24,7 @@ spec:
       values: |-
         environment: {{ $.environment }}
         application: {{ $.application }}
+        customer: {{ $customer }}
         domains:
         {{- range $.defaultDomains }}
           - {{ $customer.name }}.{{ . }}
